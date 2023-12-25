@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--PAGE TITLE-->
+    <title>ETIYA | Knowledge Sharing</title>
+    <!--IMPORT CSS STYLESHEET-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.etiya.com/files/favicon.png"
+    />
+    <!--IMPORT CSS STYLESHEET-->
+    <link rel="stylesheet" href="style.css" />
+    <!--IMPORT GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Lora:wght@400;500&family=Roboto&family=Varela&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--SIGN IN FORM-->
+    <h1 class="loginheader">ETIYA | KNOWLEDGE SHARING</h1>
+    <!--SIGN IN FORM-->
+    <div class="center">
+      <h1>Login</h1>
+      <form method="POST" action="/login">
+        <div class="text-field">
+          <input type="email" name="username" required /><span></span
+          ><label>Username</label>
+        </div>
+        <div class="text-field">
+          <input type="password" name="password" required /><span></span
+          ><label>Password</label>
+        </div>
+        <div class="forgot-password">Forgot Password?</div>
+        <button type="submit" class="loginbutton">LOGIN</button>
+      </form>
+    </div>
+  </body>
+</html>

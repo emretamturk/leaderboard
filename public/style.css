@@ -1,0 +1,655 @@
+/*------------------------------------FULL PAGE CSS------------------------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  max-width: 100%;
+  margin: 0px auto;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Varela", sans-serif;
+  color: white;
+}
+
+/*------------------------------------BODY CSS------------------------------------*/
+
+body {
+  background-color: #f78200;
+  background-image: url("https://images.pexels.com/photos/574116/pexels-photo-574116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  margin: 0px auto;
+}
+
+/*------------------------------------HEADER CSS------------------------------------*/
+
+.header-main {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  padding: 5px 10px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f78200;
+  z-index: 10000;
+}
+
+.header-main-logo {
+  position: absolute;
+  left: 20px;
+  top: 12px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.header-main-navigation-list {
+  position: absolute;
+  right: 0;
+  top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px auto;
+}
+
+.header-main-navigation-list li {
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.header-main-navigation-list li a {
+  display: flex;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.header-main-navigation-list li a:hover {
+  color: #1f1355;
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+.header-main-navigation-list li a:active {
+  transform: translateY(2px);
+  transition: 0.3s;
+}
+
+/*------------------------------------POST LIST CSS------------------------------------*/
+
+.post {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  margin: 10px auto 10px auto;
+  padding: 10px;
+  width: 100%;
+}
+.post-list {
+  position: flex;
+  margin: 50px auto 0 auto;
+  background-color: #242441;
+  width: 90%;
+}
+
+.post-img {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+  height: 300px;
+  width: 500px;
+}
+
+.post-info {
+  width: 90%;
+  padding: 20px;
+  background-color: #f4f4f7;
+  color: black;
+}
+
+.post-info-author {
+  color: #333;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.post-info h2 {
+  color: inherit;
+  margin-bottom: 20px;
+}
+
+.post-info-time {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+}
+
+.post-info p {
+  color: inherit;
+  margin-top: 20px;
+}
+
+.post-button-div {
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}
+.post-button {
+  background-color: #1f1355;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 2px solid #1f1355;
+  font-size: 0.8rem;
+  width: 100px;
+  height: 25px;
+}
+
+.post-button a {
+  text-decoration: none;
+}
+
+.post-button:hover {
+  transform: translateY(-2px);
+  scale: 1.1;
+  transition: 0.3s;
+}
+.post-button:active {
+  transform: translateY(2px);
+  transition: 0.3s;
+}
+.post-button a:hover {
+  color: #f78200;
+}
+
+/*------------------------------------SIGN IN CSS------------------------------------*/
+
+.loginheader {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 100px;
+  font-size: 3rem;
+  width: 100%;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 300px;
+  border-radius: 20px;
+  background-color: #f78200;
+}
+
+.center h1 {
+  text-align: center;
+  color: #f78200;
+  background-color: #333;
+  font-size: 1.8rem;
+  padding: 6px;
+}
+
+.center form {
+  padding: 15px 60px;
+  box-sizing: border-box;
+  background-color: #333;
+}
+
+.text-field {
+  position: relative;
+  margin: 20px 10px;
+  border-bottom: 2px solid #adadad;
+}
+
+.text-field input {
+  width: 100%;
+  padding: 0 5px;
+  height: 30px;
+  font-size: 18px;
+  border: none;
+  background: none;
+  outline: none;
+  margin-top: 6px;
+}
+
+.text-field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.text-field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 0%;
+  height: 2px;
+  background-color: #f78200;
+  transition: 0.5s;
+}
+
+.text-field input:focus ~ label,
+.text-field input:valid ~ label {
+  top: -5px;
+  color: #f78200;
+}
+
+.text-field input:focus ~ span,
+.text-field input:valid ~ span {
+  width: 100%;
+}
+
+.forgot-password {
+  cursor: pointer;
+  color: #adadad;
+  margin: 5px 0 5px 0;
+  text-align: center;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.loginbutton {
+  width: 100%;
+  background-color: #f78200;
+  height: 30px;
+  border-radius: 10px;
+  align-items: center;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.loginbutton:hover {
+  transform: translateY(-1.5px);
+  transition: 0.2s;
+}
+.loginbutton:active {
+  transform: translateY(1.5px);
+  transition: 0.2s;
+}
+
+/*------------------------------------SHARE PAGE CSS------------------------------------*/
+
+.new-post-section {
+  width: 800px;
+  margin-top: 80px;
+}
+
+.new-post-form {
+  width: 100%;
+}
+
+.new-post-info {
+  display: grid;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-post-label-title {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.new-post-label-author {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.new-post-input-post-title {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.new-post-input-post-author {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.new-post-submit-button {
+  background-color: #f78200;
+  width: 100%;
+  border-radius: 20px;
+  height: 30px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-weight: bolder;
+}
+.new-post-submit-button:hover {
+  transform: translateY(-2px);
+}
+.new-post-submit-button:active {
+  transform: translateY(2px);
+}
+
+/*------------------------------------LIBRARY CARD CSS------------------------------------*/
+
+.flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 55px;
+}
+
+.card {
+  background: #fff;
+  width: 250px;
+  margin: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation-name: moveInRight;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+.card-img {
+  height: 200px;
+  width: 100%;
+  background: url("https://pbs.twimg.com/profile_images/1633084336336404483/cohxTvGM_400x400.jpg");
+  border-radius: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.card-content {
+  margin-bottom: 10px;
+  word-break: break-all;
+  white-space: normal;
+}
+.card-link {
+  padding: 10px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-size: 15px;
+  background-color: #1f1355;
+  border-radius: 10px;
+}
+.card-link:hover {
+  transform: translateY(-2px);
+  transition: 0.2s;
+  background-color: #f78200;
+}
+
+.card-link:active {
+  transform: translateY(2px);
+  transition: 0.2s;
+}
+
+/*--------------------------------------ABSTRACT CSS-------------------------------------*/
+
+/*----------------MAIN ABSTRACT CSS---------------*/
+.main-abstract {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+  margin-top: 50px;
+  background-color: #ffffff;
+  height: 500px;
+  width: 100%;
+}
+
+.main-abstract-header {
+  display: flex;
+  background-color: inherit;
+  height: 200px;
+  width: 1000px;
+  margin-top: 20px;
+}
+
+.main-abstract-header h1 {
+  font-size: 3.4rem;
+  height: 100%;
+  width: 1000px;
+  color: #f78200;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 5px;
+}
+
+.main-abstract-header-info {
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+.main-abstract-header-info h2 {
+  font-size: 1.4rem;
+  height: 100%;
+  width: 1000px;
+  color: black;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+.main-abstract-header-button {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  scale: 1.4;
+}
+
+.main-abstract-header-button button:hover {
+  transform: translateY(-4px);
+  transition: 0.4s;
+}
+
+.main-abstract-header-button button:active {
+  transform: translateY(4px);
+  transition: 0.4s;
+}
+
+/*----------------LEARNMORE ABSTRACT CSS---------------*/
+
+.main-abstract-learnmore {
+  height: 900px;
+}
+
+.main-abstract-header-learnmore {
+  display: flex;
+  background-color: inherit;
+  height: 100px;
+  width: 1000px;
+  margin-top: 60px;
+}
+
+.main-abstract-header-learnmore h2 {
+  font-size: 2.8rem;
+  height: 100%;
+  width: 1000px;
+  color: #fff;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 5px;
+}
+
+.main-abstract-header-info-learnmore {
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+.main-abstract-header-info-learnmore p {
+  font-size: 1.4rem;
+  height: 100%;
+  width: 1000px;
+  color: inherit;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 0px;
+}
+
+.main-abstract-header-info-learnmore-p2 {
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+.main-abstract-header-info-learnmore-p2 p {
+  font-size: 1.2rem;
+  height: 100%;
+  width: 1000px;
+  color: inherit;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin-top: 20px;
+}
+
+.learnmore-image {
+  height: 350px;
+  width: 700px;
+}
+
+.learnmore-image img {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+}
+
+/*----------------BENEFIT ABSTRACT CSS---------------*/
+
+.main-abstract-benefit {
+  background-color: #fff;
+  height: 1200px;
+}
+
+.main-abstract-benefit-header {
+  display: flex;
+  background-color: inherit;
+  height: 100px;
+  width: 1000px;
+  margin-top: 40px;
+}
+.main-abstract-benefit-header h2 {
+  font-size: 2.4rem;
+  height: 100%;
+  width: 1000px;
+  color: #f78200;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 10px;
+}
+
+.main-abstract-benefit-info {
+  display: flex;
+  height: 200px;
+  width: 1000px;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+.main-abstract-benefit-info p {
+  font-size: 1.2rem;
+  height: 100%;
+  width: 1000px;
+  color: inherit;
+  background-color: inherit;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  margin: 0px;
+  color: black;
+}
+
+.main-abstract-benefit-list {
+  display: flex;
+  height: 700px;
+  width: 1000px;
+  background-color: inherit;
+  margin-top: 10px;
+}
+
+.main-abstract-benefit-list ul {
+  width: 100%;
+}
+.main-abstract-benefit-list ul li {
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.main-abstract-benefit-button {
+  display: flex;
+  justify-content: center;
+  scale: 1.4;
+}
+.main-abstract-benefit-button:hover {
+  transform: translateY(-4px);
+  transition: 0.4s;
+}
+
+.main-abstract-benefit-button:active {
+  transform: translateY(4px);
+  transition: 0.4s;
+}
+
+/*------------------------------------LEADERBOARD CSS------------------------------------*/
+.leaderboard-div {
+  margin-top: 60px;
+  width: 1400px;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+}
+/*---------------------------------------KEYFRAMES---------------------------------------*/
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

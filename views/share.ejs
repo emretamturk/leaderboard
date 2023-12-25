@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--PAGE TITLE-->
+    <title>ETIYA | Knowledge Sharing</title>
+    <!--IMPORT CSS STYLESHEET-->
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.etiya.com/files/favicon.png"
+    />
+    <!--IMPORT CSS STYLESHEET-->
+    <link rel="stylesheet" href="style.css" />
+    <!--IMPORT GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display&family=Lora:wght@400;500&family=Roboto&family=Varela&display=swap"
+      rel="stylesheet"
+    />
+    <!--IMPORT CKEDITOR-->
+    <script src="https://cdn.ckeditor.com/4.21.0/standard/ckeditor.js"></script>
+  </head>
+  <body>
+    <!--HEADER + NAVIGATION BAR-->
+    <header class="header-main">
+      <p class="header-main-logo">KNOWLEDGE SHARING</p>
+      <nav class="header-main-navigation">
+        <ul class="header-main-navigation-list">
+          <li><a href="/abstract">ABSTRACT</a></li>
+          <li><a href="/library">LIBRARY</a></li>
+          <li><a href="/leaderboard">LEADERBOARD</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--IMPORT FORM FOR SHARING NEW POST-->
+    <section class="new-post-section">
+      <form class="new-post-form" action="/share" method="post">
+        <div class="new-post-info">
+          <label for="Author" class="new-post-label-author">Author</label>
+          <select
+            value="Author"
+            name="Author"
+            class="new-post-input-post-author"
+            style="color: black"
+            required
+          >
+            <% teams.forEach(function(team){ %>
+            <option id="Author" value="<%=team.member%>" name="Author">
+              <%=team.member%>
+            </option>
+            <%})%>
+          </select>
+          <label for="PostTitle" class="new-post-label-title">Post Title</label>
+          <input
+            type="text"
+            name="PostTitle"
+            id="PostTitle"
+            class="new-post-input-post-title"
+            style="color: black; width: 300px"
+            required
+          />
+        </div>
+        <div>
+          <textarea
+            class="new-post-text-area"
+            cols="130"
+            rows="30"
+            style="color: black"
+            name="PostContent"
+            id="PostContent"
+          >
+          </textarea>
+          <script>
+            CKEDITOR.replace("PostContent");
+            CKEDITOR.config.removePlugins = "resize";
+            CKEDITOR.config.width = 795;
+            CKEDITOR.config.height = 400;
+          </script>
+        </div>
+        <div>
+          <button id="PostButton" type="submit" class="new-post-submit-button">
+            SUBMIT
+          </button>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
