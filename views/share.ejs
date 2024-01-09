@@ -48,7 +48,12 @@
             required
           >
             <% teams.forEach(function(team){ %>
-            <option id="Author" value="<%=team.member%>" name="Author">
+            <option
+              id="Author"
+              value="<%=team.member%>"
+              name="Author"
+              class="new-post-input-post-author-option"
+            >
               <%=team.member%>
             </option>
             <%})%>

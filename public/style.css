@@ -328,6 +328,11 @@ body {
   margin-bottom: 10px;
 }
 
+.new-post-input-post-author-option {
+  background-color: #f78200;
+  color: black !important;
+}
+
 .new-post-submit-button {
   background-color: #f78200;
   width: 100%;
