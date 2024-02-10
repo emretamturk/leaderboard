@@ -182,12 +182,13 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      res.status(401).send("Authentication Failed");
+      res
+        .status(401)
+        .send("Your username or password is incorrect, please try again");
       //res.render("login");
     } else {
       passport.authenticate("local")(req, res, function () {
-        //res.render("abstract");
-        res.status(200).render("abstract");
+        res.render("abstract");
       });
     }
   });
