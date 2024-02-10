@@ -185,8 +185,8 @@ app.post("/login", function (req, res) {
       res.status(401).send("Login failed");
     } else {
       passport.authenticate("local")(req, res, function () {
+        res.status(200);
         res.render("abstract");
-        res.send("Login successful");
       });
     }
   });
