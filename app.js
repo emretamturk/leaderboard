@@ -21,9 +21,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //IMPORT LODASH MODULE
 var _ = require("lodash");
 
-//IMPORT FLASH MODULE
-const flash = require("express-flash");
-
 //IMPORT PASSPORT MODULE
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -32,7 +29,6 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 6000 },
   })
 );
 app.use(passport.initialize());
@@ -186,11 +182,10 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      req.flash("error", "Username or password incorrect !");
-      return res.render("login");
+      res.send(401).redirect("/login");
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.render("abstract");
+        res.send(200).render("abstract");
       });
     }
   });
