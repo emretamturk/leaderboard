@@ -23,6 +23,13 @@
   </head>
   <body>
     <!--SIGN IN FORM-->
+    <%if(messages.error){%>
+    <div>
+      <ul class="alert alert-error text-center">
+        <li><%=messages.error%></li>
+      </ul>
+    </div>
+    <%}%>
     <h1 class="loginheader">ETIYA | KNOWLEDGE SHARING</h1>
     <!--SIGN IN FORM-->
     <div class="center">

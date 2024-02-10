@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //IMPORT LODASH MODULE
 var _ = require("lodash");
 
+//IMPORT FLASH MODULE
+const flash = require("express-flash");
+
 //IMPORT PASSPORT MODULE
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -29,6 +32,7 @@ app.use(
     secret: "secret",
     resave: false,
     saveUninitialized: false,
+    cookie: { maxAge: 6000 },
   })
 );
 app.use(passport.initialize());
@@ -87,7 +91,7 @@ app.get("/abstract", function (req, res) {
 
 //LOGIN PAGE ROUTE GET METHOD
 app.get("/login", function (req, res) {
-  res.render("login");
+  res.render("login", { messages: req.flash() });
 });
 
 //ABSTRACT ROUTE GET METHOD
@@ -182,12 +186,11 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      res
-        .status(401)
-        .send("Your username or password is incorrect, please try again !");
+      req.flash("error", "Username or password incorrect !");
+      return res.render("login");
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.status(200).render("abstract");
+        res.render("abstract");
       });
     }
   });
