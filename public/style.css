@@ -194,6 +194,7 @@ body {
   height: 300px;
   border-radius: 20px;
   background-color: #f78200;
+  font-family: "Roboto", sans-serif;
 }
 
 .center h1 {
@@ -202,18 +203,21 @@ body {
   background-color: #333;
   font-size: 1.8rem;
   padding: 6px;
+  font-family: inherit;
 }
 
 .center form {
   padding: 15px 60px;
   box-sizing: border-box;
   background-color: #333;
+  font-family: inherit;
 }
 
 .text-field {
   position: relative;
   margin: 20px 10px;
   border-bottom: 2px solid #adadad;
+  font-family: inherit;
 }
 
 .text-field input {
@@ -225,6 +229,7 @@ body {
   background: none;
   outline: none;
   margin-top: 6px;
+  font-family: inherit;
 }
 
 .text-field label {
@@ -236,6 +241,7 @@ body {
   font-size: 18px;
   pointer-events: none;
   transition: 0.5s;
+  font-family: inherit;
 }
 
 .text-field span::before {
@@ -265,6 +271,7 @@ body {
   color: #adadad;
   margin: 5px 0 5px 0;
   text-align: center;
+  font-family: inherit;
 }
 
 .forgot-password:hover {
@@ -280,6 +287,7 @@ body {
   outline: none;
   cursor: pointer;
   margin-top: 10px;
+  font-family: inherit;
 }
 
 .loginbutton:hover {
