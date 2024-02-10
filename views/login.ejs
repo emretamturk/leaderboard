@@ -27,7 +27,7 @@
     <!--SIGN IN FORM-->
     <div class="center">
       <h1>Login</h1>
-      <form method="POST" action="/login">
+      <form method="POST" action="/login" id="loginForm">
         <div class="text-field">
           <input type="email" name="username" required /><span></span
           ><label>Username</label>
@@ -40,5 +40,24 @@
         <button type="submit" class="loginbutton">LOGIN</button>
       </form>
     </div>
+
+    <script>
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const formData = new FormData(event.target);
+          const response = await fetch("/login", {
+            method: "POST",
+            body: formData,
+          });
+          const message = await response.text();
+          if (response.ok) {
+            alert(message);
+          } else {
+            alert("Login failed try again !");
+          }
+        });
+    </script>
   </body>
 </html>
