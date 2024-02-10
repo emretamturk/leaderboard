@@ -182,10 +182,10 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      res.status(401).send("Login failed");
+      res.status(401).send(false);
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.status(200).send("Login successful");
+        res.status(200).send(true);
         res.render("abstract");
       });
     }
