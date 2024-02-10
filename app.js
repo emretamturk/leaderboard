@@ -91,7 +91,7 @@ app.get("/abstract", function (req, res) {
 
 //LOGIN PAGE ROUTE GET METHOD
 app.get("/login", function (req, res) {
-  res.render("login", { messages: req.flash() });
+  res.render("login");
 });
 
 //ABSTRACT ROUTE GET METHOD
