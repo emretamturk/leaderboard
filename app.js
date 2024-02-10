@@ -182,10 +182,10 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      res.send(401).redirect("/login");
+      res.send("Your username and password are incorrect");
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.send(200).render("abstract");
+        res.render("abstract");
       });
     }
   });
