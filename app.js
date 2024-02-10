@@ -186,7 +186,7 @@ app.post("/login", function (req, res) {
     } else {
       passport.authenticate("local")(req, res, function () {
         res.render("abstract");
-        res.status(200).send("Login success");
+        res.send("Login successful");
       });
     }
   });
