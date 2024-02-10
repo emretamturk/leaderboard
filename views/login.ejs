@@ -40,23 +40,5 @@
         <button type="submit" class="loginbutton">LOGIN</button>
       </form>
     </div>
-    <!--LOGIN FAIL JS-->
-    <script>
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", async (event) => {
-          event.preventDefault();
-          const formData = new FormData(event.target);
-          const response = await fetch("/login", {
-            method: "POST",
-            body: formData,
-          });
-          const message = await response.text();
-          if (response.ok) {
-          } else {
-            alert("Your username or password is incorrect, please try again");
-          }
-        });
-    </script>
   </body>
 </html>

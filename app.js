@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //IMPORT LODASH MODULE
 var _ = require("lodash");
 
+//IMPORT POPUPS MODULE
+const popups = require("popups");
+
 //IMPORT PASSPORT MODULE
 const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
@@ -182,11 +185,14 @@ app.post("/login", function (req, res) {
 
   req.login(user, function (err) {
     if (err) {
-      res.status(401).send(false);
+      popups.alert("Authentication Failed !", { contentType: "error" });
+      res.status(401).send("Authentication Failed");
+      //res.render("login");
     } else {
       passport.authenticate("local")(req, res, function () {
-        res.status(200).send(true);
-        res.render("abstract");
+        //res.render("abstract");
+        popups.alert("Login successful", { contentType: "success" });
+        res.status(200).render("abstract");
       });
     }
   });
